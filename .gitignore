@@ -1,0 +1,14 @@
+lib/*
+*.project
+*.settings
+*.prefs
+*.classpath
+*.7z
+carreras-e2e-tests_aat/target/
+carreras-e2e-tests_aat/test-output/
+carreras-e2e-tests_app/target/
+.idea/
+*.iml
+.metadata/
+
+target/
