@@ -9,6 +9,9 @@ import es.panel.cest.zahori.framework.TestContext;
 
 import com.grupocarreras.zahori.app.data.TestCaseData;
 import com.grupocarreras.zahori.app.pages.LoginPO;
+import com.grupocarreras.zahori.app.pages.MenuPO;
+import com.grupocarreras.zahori.app.pages.NuevaRecFabPO;
+import com.grupocarreras.zahori.app.pages.RecFabPO;
 
 public class RecogidasFlow {
 
@@ -35,14 +38,14 @@ public class RecogidasFlow {
 
         testContext.logStepPassedWithScreenshot("login.ok", testData.login.getUsername());
 
-        // MenuPO menu = new MenuPO(testContext);
-        // menu.entradaPedidosRecFab(testData.url);
-        //
-        // RecFabPO recFab = new RecFabPO(testContext);
-        // recFab.crearRecFab();
-        //
-        // NuevaRecFabPO nuevaRecFabPO = new NuevaRecFabPO(testContext);
-        // nuevaRecFabPO.rellenarFormulario(testData.recogida);
+        MenuPO menu = new MenuPO(testContext);
+        menu.entradaPedidosRecFab(testData.url);
+
+        RecFabPO recFab = new RecFabPO(testContext);
+        recFab.crearRecFab();
+
+        NuevaRecFabPO nuevaRecFabPO = new NuevaRecFabPO(testContext);
+        nuevaRecFabPO.rellenarFormulario(testData.recogida);
     }
 
 }

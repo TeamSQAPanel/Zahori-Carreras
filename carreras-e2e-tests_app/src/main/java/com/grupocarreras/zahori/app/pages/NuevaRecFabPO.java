@@ -31,21 +31,16 @@ public class NuevaRecFabPO extends Page {
     }
 
     private void escribirNumAlbaran(String numAlbaran) {
-        PageElement contact = new PageElement(this, "Contact", Locator.id("contact"));
-        contact.write("Contacto....");
-
-        // PageElement albaranLabel = new PageElement(this, "Label Número de
-        // albarán", Locator.xpath("//label[@for='documentNumber']"));
-        // albaranLabel.click();
+        PageElement albaranLabel = new PageElement(this, "Label Número de albarán", Locator.xpath("//label[@for='documentNumber']"));
+        albaranLabel.click();
 
         PageElement albaranByName = new PageElement(this, "Label Número de albarán", Locator.name("documentNumber"));
         // albaranByName.click();
-
         albaranByName.write(numAlbaran);
 
-        PageElement albaran = new PageElement(this, "Número de albarán", Locator.id("documentNumber"));
-        albaran.click();
-        albaran.write(numAlbaran);
+        // PageElement albaran = new PageElement(this, "Número de albarán", Locator.id("documentNumber"));
+        // albaran.click();
+        // albaran.write(numAlbaran);
     }
 
     private void escribirCodigoCompania(String compania) {
