@@ -21,6 +21,7 @@ public class Static {
     public static final String FECHA = "FECHA";
     public static final String HORA_INICIO = "HORA INICIO";
     public static final String HORA_FIN = "HORA FIN";
+    public static final String TEMPERATURA = "TEMPERATURA";
     public static final String REMITENTE = "REMITENTE";
     public static final String DESTINATARIO = "DESTINATARIO";
     public static final String BULTOS = "BULTOS";

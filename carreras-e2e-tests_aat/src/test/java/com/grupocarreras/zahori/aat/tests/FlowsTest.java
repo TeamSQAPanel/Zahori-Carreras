@@ -7,7 +7,6 @@ package com.grupocarreras.zahori.aat.tests;
 
 import es.panel.cest.zahori.framework.BaseTest;
 
-import com.grupocarreras.zahori.app.data.Static;
 import com.grupocarreras.zahori.app.data.TestCaseData;
 import com.grupocarreras.zahori.app.flows.RecogidasFlow;
 
@@ -22,15 +21,7 @@ public class FlowsTest extends BaseTest {
         testContext.getBrowser().loadPage(testData.url);
 
         /* FLOW EXECUTION */
-        String flow = testData.testFlow;
-
-        switch (flow) {
-        case Static.FLUJO_RECOGIDAS:
-            RecogidasFlow flujoRecogidas = new RecogidasFlow(testContext, testData);
-            flujoRecogidas.execute();
-            break;
-        default:
-            testContext.failTest("error.selectflow.notfound");
-        }
+        RecogidasFlow flujoRecogidas = new RecogidasFlow(testContext, testData);
+        flujoRecogidas.execute();
     }
 }

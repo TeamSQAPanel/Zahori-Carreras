@@ -9,22 +9,29 @@ public class LoginPO extends Page {
 
     private static final long serialVersionUID = -3027498072954750755L;
 
-    private PageElement username = new PageElement(this, "Usuario", Locator.id("username"));
-    private PageElement password = new PageElement(this, "Contraseña", Locator.id("password"));
-    private PageElement loginButton = new PageElement(this, "Botón login", Locator.className("submit"));
+    private PageElement mensajeError = new PageElement(this, "Mensaje de error en login", Locator.xpath("//span[@class='message-text']"));
 
     public LoginPO(TestContext contextTC) {
         super(contextTC);
     }
 
     public void login(String user, String pass) {
-        testContext.logInfo("Haciendo login con el usuario {0}", user);
-
+        PageElement username = new PageElement(this, "Usuario", Locator.id("username"));
         username.write(user);
-        password.writePassword(pass);
-        testContext.logStepPassedWithScreenshot("Formulario de login rellenado");
 
+        PageElement password = new PageElement(this, "Contraseña", Locator.id("password"));
+        password.writePassword(pass);
+
+        PageElement loginButton = new PageElement(this, "Botón login", Locator.className("submit"));
         loginButton.click();
+    }
+
+    public boolean hayError() {
+        return mensajeError.isVisible();
+    }
+
+    public String getMensajeError() {
+        return mensajeError.getText();
     }
 
 }

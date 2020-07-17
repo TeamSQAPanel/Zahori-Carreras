@@ -12,6 +12,7 @@ public class Recogida {
     private String fecha;
     private String horaInicio;
     private String horaFin;
+    private String temperatura;
     private String remitente;
     private String destinatario;
     private String bultos;
@@ -24,6 +25,7 @@ public class Recogida {
         fecha = testData.get(Static.FECHA);
         horaInicio = testData.get(Static.HORA_INICIO);
         horaFin = testData.get(Static.HORA_FIN);
+        temperatura = testData.get(Static.TEMPERATURA);
         remitente = testData.get(Static.REMITENTE);
         destinatario = testData.get(Static.DESTINATARIO);
         bultos = testData.get(Static.BULTOS);
@@ -33,8 +35,8 @@ public class Recogida {
     @Override
     public String toString() {
         return "Recogida [numAlbaran=" + numAlbaran + ", codigoCompania=" + codigoCompania + ", codigoDivision=" + codigoDivision + ", fecha=" + fecha
-                + ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + ", remitente=" + remitente + ", destinatario=" + destinatario + ", bultos=" + bultos
-                + ", kilos=" + kilos + "]";
+                + ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + ", temperatura=" + temperatura + ", remitente=" + remitente + ", destinatario="
+                + destinatario + ", bultos=" + bultos + ", kilos=" + kilos + "]";
     }
 
     public String getNumAlbaran() {
@@ -83,6 +85,14 @@ public class Recogida {
 
     public void setHoraFin(String horaFin) {
         this.horaFin = horaFin;
+    }
+
+    public String getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(String temperatura) {
+        this.temperatura = temperatura;
     }
 
     public String getRemitente() {

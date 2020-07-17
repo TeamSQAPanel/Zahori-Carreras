@@ -7,6 +7,9 @@
 	<parameter name="remote" value="NO" />
 	<parameter name="version" value="80.0.3987.132" />
 
-    <test name="TEST-1"><classes><class name="com.grupocarreras.zahori.aat.tests.FlowsTest"/></classes></test>
+    <test name="TEST-LOGIN-OK"><classes><class name="com.grupocarreras.zahori.aat.tests.FlowsTest"/></classes></test>
+    <test name="TEST-LOGIN-KO"><classes><class name="com.grupocarreras.zahori.aat.tests.FlowsTest"/></classes></test>
+    
+    
  
 </suite>

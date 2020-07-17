@@ -14,7 +14,7 @@ public class RecFabPO extends Page {
     }
 
     public void crearRecFab() {
-        PageElement nuevaRecFab = new PageElement(this, "Crear nueva REC-FAB", Locator.xpath("//button[contains(text(),'Nueva REC-FAB')]"));
+        PageElement nuevaRecFab = new PageElement(this, "Botón Nueva REC-FAB", Locator.xpath("//button[contains(text(),'Nueva REC-FAB')]"));
         nuevaRecFab.click();
     }
 

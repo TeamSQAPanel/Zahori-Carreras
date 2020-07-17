@@ -7,8 +7,8 @@ package com.grupocarreras.zahori.app.flows;
 
 import es.panel.cest.zahori.framework.TestContext;
 
+import com.grupocarreras.zahori.app.business.LoginBO;
 import com.grupocarreras.zahori.app.data.TestCaseData;
-import com.grupocarreras.zahori.app.pages.LoginPO;
 import com.grupocarreras.zahori.app.pages.MenuPO;
 import com.grupocarreras.zahori.app.pages.NuevaRecFabPO;
 import com.grupocarreras.zahori.app.pages.RecFabPO;
@@ -33,10 +33,8 @@ public class RecogidasFlow {
     }
 
     public void execute() {
-        LoginPO loginPO = new LoginPO(testContext);
-        loginPO.login(testData.login.getUsername(), testData.login.getPassword());
-
-        testContext.logStepPassedWithScreenshot("login.ok", testData.login.getUsername());
+        LoginBO loginBO = new LoginBO(testContext);
+        loginBO.login(testData.login);
 
         MenuPO menu = new MenuPO(testContext);
         menu.entradaPedidosRecFab(testData.url);

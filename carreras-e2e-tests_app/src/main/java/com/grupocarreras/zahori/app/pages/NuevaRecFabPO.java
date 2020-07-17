@@ -22,6 +22,7 @@ public class NuevaRecFabPO extends Page {
         escribirFecha(recogida.getFecha());
         escribirHoraInicio(recogida.getHoraInicio());
         escribirHoraFin(recogida.getHoraFin());
+        seleccionarTemperatura(recogida.getTemperatura());
 
         seleccionarRemitente(recogida.getRemitente());
         seleccionarDestinatario(recogida.getDestinatario());
@@ -34,13 +35,14 @@ public class NuevaRecFabPO extends Page {
         PageElement albaranLabel = new PageElement(this, "Label Número de albarán", Locator.xpath("//label[@for='documentNumber']"));
         albaranLabel.click();
 
-        PageElement albaranByName = new PageElement(this, "Label Número de albarán", Locator.name("documentNumber"));
-        // albaranByName.click();
-        albaranByName.write(numAlbaran);
+        // PageElement albaranByName = new PageElement(this, "Label Número de
+        // albarán", Locator.name("documentNumber"));
+        // // albaranByName.click();
+        // albaranByName.write(numAlbaran);
 
-        // PageElement albaran = new PageElement(this, "Número de albarán", Locator.id("documentNumber"));
-        // albaran.click();
-        // albaran.write(numAlbaran);
+        PageElement albaran = new PageElement(this, "Número de albarán", Locator.id("documentNumber"));
+        albaran.click();
+        albaran.write(numAlbaran);
     }
 
     private void escribirCodigoCompania(String compania) {
@@ -94,6 +96,11 @@ public class NuevaRecFabPO extends Page {
     private void escribirKilos(String kilos) {
         PageElement kilosPE = new PageElement(this, "Kilos", Locator.id("kilos"));
         kilosPE.write(kilos);
+    }
+
+    private void seleccionarTemperatura(String temperatura) {
+        PageElement temperaturaPE = new PageElement(this, "Temperatura", Locator.xpath("//tune-select[@name='temperatureType']"));
+        temperaturaPE.selectOptionText(temperatura);
     }
 
 }
